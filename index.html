@@ -1,387 +1,644 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Khang Le</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:700|Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/animate_background.css" />
-    <link rel="stylesheet" href="node_modules/hover.css/css/hover-min.css">
-    <link rel="stylesheet" href="node_modules/izimodal/css/iziModal.min.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nguyen-Khang Le — LLM &amp; NLP Researcher, JAIST</title>
+  <meta name="description" content="Nguyen-Khang Le is a JSPS Research Fellow and Ph.D. researcher at JAIST working on large language models and natural language processing — bridging cutting-edge LLMs with practical deployment in multilingual, resource-constrained settings." />
+  <meta name="author" content="Nguyen-Khang Le" />
+  <link rel="canonical" href="https://lekhang4497.github.io/" />
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#212121" media="(prefers-color-scheme: dark)" />
 
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Nguyen-Khang Le — LLM &amp; NLP Researcher, JAIST" />
+  <meta property="og:description" content="JSPS Research Fellow and Ph.D. researcher at JAIST. LLMs, NLP, efficient inference, and multilingual question answering." />
+  <meta property="og:url" content="https://lekhang4497.github.io/" />
+  <meta property="og:image" content="https://lekhang4497.github.io/assets/img/profile.jpg" />
+  <meta property="profile:first_name" content="Nguyen-Khang" />
+  <meta property="profile:last_name" content="Le" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Nguyen-Khang Le — LLM &amp; NLP Researcher, JAIST" />
+  <meta name="twitter:description" content="JSPS Research Fellow and Ph.D. researcher at JAIST. LLMs, NLP, efficient inference, multilingual QA." />
+  <meta name="twitter:image" content="https://lekhang4497.github.io/assets/img/profile.jpg" />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- Avoid flash of incorrect theme -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (!t) { t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; }
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) { document.documentElement.setAttribute("data-theme", "light"); }
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Nguyen-Khang Le",
+    "givenName": "Nguyen-Khang",
+    "familyName": "Le",
+    "jobTitle": "JSPS Research Fellow",
+    "email": "mailto:lnkhang@jaist.ac.jp",
+    "image": "https://lekhang4497.github.io/assets/img/profile.jpg",
+    "url": "https://lekhang4497.github.io/",
+    "affiliation": { "@type": "Organization", "name": "Japan Advanced Institute of Science and Technology" },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "Japan Advanced Institute of Science and Technology" },
+      { "@type": "CollegeOrUniversity", "name": "University of Science, VNU-HCM" }
+    ],
+    "knowsAbout": ["Large Language Models", "Natural Language Processing", "Question Answering", "Efficient LLM Inference", "Model Compression", "Multilingual NLP"],
+    "sameAs": [
+      "https://scholar.google.com/citations?user=hQwyv4YAAAAJ",
+      "https://github.com/lekhang4497",
+      "https://www.linkedin.com/in/le-nguyen-khang/",
+      "https://orcid.org/0000-0001-6585-5470"
+    ]
+  }
+  </script>
+</head>
 <body>
 
-    <div class="star-background" id="top-page">
-        <div id='stars'></div>
-        <div id='stars2'></div>
-        <div id='stars3'></div>
-
-        <div class="star-title">
-            <div class="avatar mb-3">
-                <img class="img-fluid img-avatar" src="images/avatar.jpg" alt="My avatar">
-            </div>
-            <div class="name s-font mb-3">
-                <span class="border-bottom">NGUYEN-KHANG LE</span>
-            </div>
-            <div class="title s-font">
-                Software engineer
-            </div>
-        </div>
+  <!-- ============================ NAV ============================ -->
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="#top">Nguyen-Khang Le<span> · JAIST</span></a>
+      <nav class="nav__links" aria-label="Section navigation">
+        <a href="#about">About</a>
+        <a href="#news">News</a>
+        <a href="#publications">Publications</a>
+        <a href="#awards">Awards</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle theme">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.5 6.5 0 0 0 9.8 9.8z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19"/></svg>
+      </button>
     </div>
-    <nav class="navbar navbar-expand-lg navbar-dark my-navbar sticky-top">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+  </header>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav nav-fill w-100">
-                <li class="nav-item hvr-buzz-out">
-                    <a class="nav-link" href="#top-page" data-toggle="collapse" data-target=".navbar-collapse.show">Home
-                    </a>
-                </li>
-                <li class="nav-item hvr-buzz-out">
-                    <a class="nav-link" href="#about" data-toggle="collapse" data-target=".navbar-collapse.show">About
-                    </a>
-                </li>
-                <li class="nav-item hvr-buzz-out">
-                    <a class="nav-link" href="#skills" data-toggle="collapse" data-target=".navbar-collapse.show">Skills
-                    </a>
-                </li>
-                <li class="nav-item hvr-buzz-out">
-                    <a class="nav-link" href="#contact" data-toggle="collapse" data-target=".navbar-collapse.show">Contact
-                    </a>
-                </li>
+  <main id="top">
+
+    <!-- ============================ HERO ============================ -->
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero__top">
+          <img class="hero__photo" src="assets/img/profile.jpg" width="132" height="132"
+               alt="Portrait of Nguyen-Khang Le" />
+          <div class="hero__id">
+            <h1>Nguyen-Khang Le</h1>
+            <p class="hero__role"><b>JSPS Research Fellow</b> &middot; Ph.D. in Information Science</p>
+            <p class="hero__role" style="color:var(--ink-3);font-weight:500;margin-top:4px">Nguyen Laboratory &middot; Japan Advanced Institute of Science and Technology (JAIST)</p>
+          </div>
+        </div>
+
+        <p class="hero__tagline">
+          I work on <em>large language models</em> and <em>natural language processing</em> — bridging
+          cutting-edge LLMs with their practical deployment in <em>multilingual, resource-constrained</em>
+          settings, especially for non-English languages.
+        </p>
+
+        <div class="links">
+          <a href="https://scholar.google.com/citations?user=hQwyv4YAAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 1 8l11 6 9-4.91V17h2V8L12 2zM5 13.18v3.82L12 21l7-4v-3.82l-7 3.82-7-3.82z"/></svg>
+            Google Scholar
+          </a>
+          <a href="https://github.com/lekhang4497" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.06.78 2.14 0 1.55-.01 2.8-.01 3.18 0 .31.21.69.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/le-nguyen-khang/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://orcid.org/0000-0001-6585-5470" target="_blank" rel="noopener" aria-label="ORCID">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zM8.06 17.5H6.6V8.9h1.46v8.6zM7.33 7.8a.96.96 0 1 1 0-1.92.96.96 0 0 1 0 1.92zm9.92 6.04c0 2.6-1.66 3.66-3.9 3.66H9.9V8.9h3.45c2.16 0 3.9 1.4 3.9 3.94zm-1.5.03c0-1.88-1.16-2.65-2.5-2.65h-1.9v5.32h1.6c1.52 0 2.8-.67 2.8-2.67z"/></svg>
+            ORCID
+          </a>
+          <a href="mailto:lnkhang@jaist.ac.jp" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2.5"/><path d="m3 6.5 9 6 9-6"/></svg>
+            Email
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ ABOUT ============================ -->
+    <section class="section" id="about">
+      <div class="wrap reveal">
+        <p class="eyebrow">About</p>
+        <h2 class="section-title">Research</h2>
+        <div class="prose">
+          <p>
+            I am a Ph.D. researcher in Information Science at <strong>JAIST</strong> and a
+            <strong>JSPS Research Fellow</strong>, working in the Nguyen Laboratory with
+            Prof. Le-Minh Nguyen. My research centers on large language models and natural
+            language processing.
+          </p>
+          <p>
+            My work aims to bridge the gap between cutting-edge LLMs and their practical deployment
+            in <strong>multilingual, resource-constrained environments</strong> — especially for
+            non-English languages. This spans <strong>efficient inference</strong> (speculative
+            decoding, model pruning), <strong>question answering</strong>, and language resources
+            for low-resource languages such as Vietnamese.
+          </p>
+          <p>
+            I have published 27 papers (15 as first author), including first-author work at
+            <strong>ACL</strong>, <strong>ECAI</strong>, <strong>COLING</strong>, and
+            <strong>LREC</strong>, and in <strong>Information Processing &amp; Management</strong>.
+            I was <strong>Champion of the Zalo AI Challenge 2023</strong> (runner-up in 2022) and a
+            recipient of the <strong>NEC C&amp;C Foundation Grant</strong> (2024) and the
+            <strong>JSPS Research Fellowship</strong> (2026).
+          </p>
+        </div>
+        <div class="tags" aria-label="Research interests">
+          <span class="tag">Large Language Models</span>
+          <span class="tag">Natural Language Processing</span>
+          <span class="tag">Question Answering</span>
+          <span class="tag">Efficient LLM Inference</span>
+          <span class="tag">Model Compression</span>
+          <span class="tag">Multilingual &amp; Vietnamese NLP</span>
+          <span class="tag">Legal NLP</span>
+          <span class="tag">Vision-Language</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ NEWS ============================ -->
+    <section class="section" id="news">
+      <div class="wrap reveal">
+        <p class="eyebrow">Recent</p>
+        <h2 class="section-title">News</h2>
+        <ul class="news">
+          <li><time>2026</time><span class="news__body">Awarded the <b>JSPS Research Fellowship</b> (acceptance rate &asymp; 7%).</span></li>
+          <li><time>2026</time><span class="news__body"><b>ADASPEC</b> — multilingual speculative decoding — accepted at <b>AAAI 2026</b>.</span></li>
+          <li><time>2025</time><span class="news__body"><b>SPECTRA</b> accepted at <b>ACL 2025</b>; featured in the science press.</span></li>
+          <li><time>2025</time><span class="news__body"><b>OptiPrune</b> published at <b>COLING 2025</b>.</span></li>
+          <li><time>2024</time><span class="news__body">Received the <b>NEC C&amp;C Foundation Grant</b>.</span></li>
+          <li><time>2024</time><span class="news__body"><b>ANSPRE</b> accepted at <b>ECAI 2024</b>; featured in the science press.</span></li>
+          <li><time>2023</time><span class="news__body"><b>Champion, Zalo AI Challenge 2023</b>.</span></li>
+          <li><time>2023</time><span class="news__body"><b>JAIST Outstanding Student Award</b>; started the Ph.D. program at JAIST (MEXT Scholarship).</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== SELECTED PUBLICATIONS ===================== -->
+    <section class="section" id="publications">
+      <div class="wrap reveal">
+        <p class="eyebrow">Selected work</p>
+        <h2 class="section-title">Selected Publications</h2>
+        <div class="featured">
+
+          <article class="pub-card">
+            <div class="pub-card__meta">
+              <span class="pub-card__venue">ACL 2025</span>
+              <span class="badge badge--tier">A*</span>
+              <span class="badge badge--first">First author</span>
+            </div>
+            <h3><a href="https://aclanthology.org/2025.acl-long.685/" target="_blank" rel="noopener">SPECTRA: Faster Large Language Model Inference with Optimized Internal and External Speculation</a></h3>
+            <p class="pub-card__authors"><b>Nguyen-Khang Le</b>, Dinh-Truong Do, Le-Minh Nguyen</p>
+            <p class="pub-card__desc">A training-free framework that combines internal and external speculation to accelerate LLM inference by up to <b>4.08&times;</b>, with no modification to the base model.</p>
+            <div class="pub-card__links">
+              <a class="chip" href="https://aclanthology.org/2025.acl-long.685/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg> Paper</a>
+              <a class="chip" href="https://www.eurekalert.org/news-releases/1093988" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h13v14H6a2 2 0 0 1-2-2z"/><path d="M17 8h2a1 1 0 0 1 1 1v8a2 2 0 0 1-2 2"/><path d="M8 9h6M8 13h6"/></svg> Press</a>
+            </div>
+          </article>
+
+          <article class="pub-card">
+            <div class="pub-card__meta">
+              <span class="pub-card__venue">ECAI 2024</span>
+              <span class="badge badge--tier">A</span>
+              <span class="badge badge--first">First author</span>
+            </div>
+            <h3><a href="https://ebooks.iospress.nl/volumearticle/69873" target="_blank" rel="noopener">ANSPRE: Improving Question-Answering in Large Language Models with Answer-Prefix Generation</a></h3>
+            <p class="pub-card__authors"><b>Nguyen-Khang Le</b>, Dieu-Hien Nguyen, Le-Minh Nguyen</p>
+            <p class="pub-card__desc">Answer-prefix generation steers LLMs to output concise, exact answer phrases with well-calibrated confidence — important for high-stakes QA in law, medicine, and education.</p>
+            <div class="pub-card__links">
+              <a class="chip" href="https://ebooks.iospress.nl/volumearticle/69873" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg> Paper</a>
+              <a class="chip" href="https://www.eurekalert.org/news-releases/1061847" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h13v14H6a2 2 0 0 1-2-2z"/><path d="M17 8h2a1 1 0 0 1 1 1v8a2 2 0 0 1-2 2"/><path d="M8 9h6M8 13h6"/></svg> Press</a>
+            </div>
+          </article>
+
+          <article class="pub-card">
+            <div class="pub-card__meta">
+              <span class="pub-card__venue">COLING 2025</span>
+              <span class="badge badge--tier">A</span>
+              <span class="badge badge--first">First author</span>
+            </div>
+            <h3><a href="https://aclanthology.org/2025.coling-main.243/" target="_blank" rel="noopener">OptiPrune: Effective Pruning Approach for Every Target Sparsity</a></h3>
+            <p class="pub-card__authors"><b>Nguyen-Khang Le</b>, Ryotaro Sato, Dai Nakashima, Takeshi Suzuki, Le-Minh Nguyen</p>
+            <p class="pub-card__desc">A pruning method that stays effective across <b>every</b> target sparsity by adapting non-uniform sparsity and selecting the optimal strategy per regime — validated across datasets, architectures, and languages.</p>
+            <div class="pub-card__links">
+              <a class="chip" href="https://aclanthology.org/2025.coling-main.243/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg> Paper</a>
+            </div>
+          </article>
+
+          <article class="pub-card">
+            <div class="pub-card__meta">
+              <span class="pub-card__venue">LREC 2022</span>
+              <span class="badge badge--first">First author</span>
+            </div>
+            <h3><a href="https://aclanthology.org/2022.lrec-1.700/" target="_blank" rel="noopener">VIMQA: A Vietnamese Dataset for Advanced Reasoning and Explainable Multi-hop Question Answering</a></h3>
+            <p class="pub-card__authors"><b>Nguyen-Khang Le</b>, Hien Nguyen, Tung Le Thanh, Le-Minh Nguyen</p>
+            <p class="pub-card__desc">A 10,000+ example, human-annotated Vietnamese multi-hop QA dataset with sentence-level supporting facts for explainable reasoning in a low-resource language.</p>
+            <div class="pub-card__links">
+              <a class="chip" href="https://aclanthology.org/2022.lrec-1.700/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg> Paper</a>
+              <a class="chip" href="https://github.com/vimqa/vimqa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3"/></svg> Dataset</a>
+            </div>
+          </article>
+
+          <article class="pub-card">
+            <div class="pub-card__meta">
+              <span class="pub-card__venue">Information Processing &amp; Management 2023</span>
+              <span class="badge badge--tier">Q1</span>
+            </div>
+            <h3><a href="https://www.sciencedirect.com/science/article/abs/pii/S0306457323002510" target="_blank" rel="noopener">ViWiQA: Efficient End-to-End Vietnamese Wikipedia-based Open-domain Question-Answering for Single-hop and Multi-hop Questions</a></h3>
+            <p class="pub-card__authors">Dieu-Hien Nguyen, <b>Nguyen-Khang Le</b>, Le-Minh Nguyen</p>
+            <p class="pub-card__desc">Efficient end-to-end Vietnamese open-domain QA over Wikipedia, with retrievers tailored to single-hop and multi-hop questions under tight data constraints.</p>
+            <div class="pub-card__links">
+              <a class="chip" href="https://www.sciencedirect.com/science/article/abs/pii/S0306457323002510" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg> Journal</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ALL PUBLICATIONS ===================== -->
+    <section class="section" id="all-publications">
+      <div class="wrap reveal">
+        <p class="eyebrow">Full record</p>
+        <h2 class="section-title">All Publications</h2>
+        <div class="pub-controls">
+          <div class="seg" role="group" aria-label="Filter publications">
+            <button type="button" data-filter="all" aria-pressed="true">All</button>
+            <button type="button" data-filter="first" aria-pressed="false">First author</button>
+          </div>
+          <span class="pub-count"><strong>34</strong> publications &middot;
+            <a href="https://scholar.google.com/citations?user=hQwyv4YAAAAJ" target="_blank" rel="noopener">Google Scholar &rarr;</a>
+          </span>
+        </div>
+
+        <!-- 2026 -->
+        <div class="year-group">
+          <div class="year-group__label">2026</div>
+          <ul class="pub-list">
+            <li>
+              <div class="pub-title">ADASPEC: Adaptive Multilingual Speculative Decoding with Self-Synthesized Language-Aware Training and Vocabulary Simplification</div>
+              <div class="pub-authors">Dinh-Truong Do, <b>Nguyen-Khang Le</b>, Le-Minh Nguyen</div>
+              <div class="pub-venue">AAAI Conference on Artificial Intelligence (AAAI), 2026</div>
+              <div class="pub-tags"><span class="badge badge--tier">A*</span></div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 2025 -->
+        <div class="year-group">
+          <div class="year-group__label">2025</div>
+          <ul class="pub-list">
+            <li data-first>
+              <div class="pub-title"><a href="https://aclanthology.org/2025.acl-long.685/" target="_blank" rel="noopener">SPECTRA: Faster Large Language Model Inference with Optimized Internal and External Speculation</a></div>
+              <div class="pub-authors"><b>Nguyen-Khang Le</b>, Dinh-Truong Do, Le-Minh Nguyen</div>
+              <div class="pub-venue">Annual Meeting of the Association for Computational Linguistics (ACL), 2025</div>
+              <div class="pub-tags"><span class="badge badge--first">First author</span><span class="badge badge--tier">A*</span></div>
+            </li>
+            <li data-first>
+              <div class="pub-title"><a href="https://aclanthology.org/2025.coling-main.243/" target="_blank" rel="noopener">OptiPrune: Effective Pruning Approach for Every Target Sparsity</a></div>
+              <div class="pub-authors"><b>Nguyen-Khang Le</b>, Ryotaro Sato, Dai Nakashima, Takeshi Suzuki, Le-Minh Nguyen</div>
+              <div class="pub-venue">International Conference on Computational Linguistics (COLING), 2025</div>
+              <div class="pub-tags"><span class="badge badge--first">First author</span><span class="badge badge--tier">A</span></div>
+            </li>
+            <li data-first>
+              <div class="pub-title"><a href="https://arxiv.org/abs/2506.02529" target="_blank" rel="noopener">Automated Web Application Testing: End-to-End Test Case Generation with Large Language Models and Screen Transition Graphs</a></div>
+              <div class="pub-authors"><b>Nguyen-Khang Le</b>, Quang-Minh Bui, Minh-Nhat Nguyen, H. Nguyen, T. Vo, Son T. Luu, S. Nomura, et al.</div>
+              <div class="pub-venue">arXiv preprint arXiv:2506.02529, 2025</div>
+              <div class="pub-tags"><span class="badge badge--first">First author</span></div>
+            </li>
+            <li>
+              <div class="pub-title">A Lightweight Moment Retrieval System with Global Re-ranking and Robust Adaptive Bidirectional Temporal Search</div>
+              <div class="pub-authors">Tien-Anh Nguyen-Nhu, Hai-Long Tran, <b>Nguyen-Khang Le</b>, Minh-Nhat Nguyen, et al.</div>
+              <div class="pub-venue">Computer Vision and Pattern Recognition Conference (CVPR), 2025</div>
+            </li>
+            <li>
+              <div class="pub-title">A Summary of the ALQAC 2025 Competition</div>
+              <div class="pub-authors">Dinh-Truong Do, Son T. Luu, T. Pham, T. Vo, &hellip; <b>Nguyen-Khang Le</b>, et al.</div>
+              <div class="pub-venue">International Conference on Knowledge and Systems Engineering (KSE), 2025</div>
+            </li>
+            <li>
+              <div class="pub-title">JNLP at COLIEE 2025: Hybrid Large Language Model-based Framework for Legal Information Retrieval and Entailment</div>
+              <div class="pub-authors">H. Nguyen, K. V. H. Nguyen, N. A. T. Pham, H. A. Trieu, <b>Nguyen-Khang Le</b>, et al.</div>
+              <div class="pub-venue">COLIEE Workshop, 2025</div>
+            </li>
+            <li>
+              <div class="pub-title">Geometrical, Graphical, and Transformer-based Approaches for Recognizing Naturalistic Depression in Facial Behavior</div>
+              <div class="pub-authors">T. N. K. Nguyen, <b>Nguyen-Khang Le</b>, M. P. Tran, A. D. Tran, N. T. Le</div>
+              <div class="pub-venue">International Conference on Activity and Behavior Computing (ABC), 2025</div>
+            </li>
+            <li>
+              <div class="pub-title">SHREC 2025: Retrieval of Optimal Objects for Multi-modal Enhanced Language and Spatial Assistance (ROOMELSA)</div>
+              <div class="pub-authors">T. T. Nguyen, V. T. Huynh, &hellip; <b>Nguyen-Khang Le</b>, et al.</div>
+              <div class="pub-venue">Computers &amp; Graphics, 2025</div>
+            </li>
+            <li>
+              <div class="pub-title">LangCompress: Language-Aware Compression of Large Language Models</div>
+              <div class="pub-authors">Dieu-Hien Nguyen, <b>Nguyen-Khang Le</b>, Dinh-Truong Do, Le-Minh Nguyen</div>
+              <div class="pub-venue">International Joint Conference on Natural Language Processing (IJCNLP-AACL), 2025</div>
+            </li>
+            <li>
+              <div class="pub-title">SCIGENT: Multi-agent for End-to-end Question Answering on Scientific Knowledge Graph</div>
+              <div class="pub-authors">Dieu-Hien Nguyen, <b>Nguyen-Khang Le</b>, S. Hasegawa, Le-Minh Nguyen</div>
+              <div class="pub-venue">International Conference on Knowledge and Systems Engineering (KSE), 2025</div>
+            </li>
+            <li data-first>
+              <div class="pub-title">Finetuning LLMs for Automatic Form Interaction on Web-Browser in Selenium Testing Framework</div>
+              <div class="pub-authors"><b>Nguyen-Khang Le</b>, H. Nguyen, Minh-Nhat Nguyen, Son T. Luu, T. Vo, Quang-Minh Bui, S. Nomura, et al.</div>
+              <div class="pub-venue">International Conference on Knowledge and Systems Engineering (KSE), 2025</div>
+              <div class="pub-tags"><span class="badge badge--first">First author</span></div>
+            </li>
+            <li>
+              <div class="pub-title">AuthNet: A Framework for Research Expert Discovery and Network Visualization Based on Topic-Specific Queries</div>
+              <div class="pub-authors">Dieu-Hien Nguyen, <b>Nguyen-Khang Le</b>, Le-Minh Nguyen</div>
+              <div class="pub-venue">JSAI International Symposium on Artificial Intelligence, 2025</div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 2024 -->
+        <div class="year-group">
+          <div class="year-group__label">2024</div>
+          <ul class="pub-list">
+            <li>
+              <div class="pub-title">Data Augmentation and Large Language Model for Legal Case Retrieval and Entailment</div>
+              <div class="pub-authors">Quang-Minh Bui, Dinh-Truong Do, <b>Nguyen-Khang Le</b>, Dieu-Hien Nguyen, K. V. H. Nguyen, et al.</div>
+              <div class="pub-venue">The Review of Socionetwork Strategies, 18(1), 2024</div>
+            </li>
+            <li data-first>
+              <div class="pub-title"><a href="https://ebooks.iospress.nl/volumearticle/69873" target="_blank" rel="noopener">ANSPRE: Improving Question-Answering in Large Language Models with Answer-Prefix Generation</a></div>
+              <div class="pub-authors"><b>Nguyen-Khang Le</b>, Dieu-Hien Nguyen, Le-Minh Nguyen</div>
+              <div class="pub-venue">European Conference on Artificial Intelligence (ECAI), 2024</div>
+              <div class="pub-tags"><span class="badge badge--first">First author</span><span class="badge badge--tier">A</span></div>
+            </li>
+            <li data-first>
+              <div class="pub-title">Vietnamese Elementary Math Reasoning using Large Language Model with Refined Translation and Dense-Retrieved Chain-of-Thought</div>
+              <div class="pub-authors"><b>Nguyen-Khang Le</b>, Dieu-Hien Nguyen, Dinh-Truong Do, C. Nguyen, Le-Minh Nguyen</div>
+              <div class="pub-venue">JSAI International Symposium on Artificial Intelligence, 2024</div>
+              <div class="pub-tags"><span class="badge badge--first">First author</span></div>
+            </li>
+            <li>
+              <div class="pub-title">Multi-target Contrastive Objective for Learning Property-Aware Vision-Language Representation</div>
+              <div class="pub-authors">Dieu-Hien Nguyen, <b>Nguyen-Khang Le</b>, Le-Minh Nguyen</div>
+              <div class="pub-venue">Principle and Practice of Data and Knowledge Acquisition Workshop (PKAW), 2024</div>
+            </li>
+            <li data-first>
+              <div class="pub-title">Integrating Vision-Tool to Enhance Visual-Question-Answering in Special Domains</div>
+              <div class="pub-authors"><b>Nguyen-Khang Le</b>, Dieu-Hien Nguyen, Le-Minh Nguyen</div>
+              <div class="pub-venue">Pacific Rim International Conference on Artificial Intelligence (PRICAI), 2024</div>
+              <div class="pub-tags"><span class="badge badge--first">First author</span><span class="badge badge--tier">A</span></div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 2023 -->
+        <div class="year-group">
+          <div class="year-group__label">2023</div>
+          <ul class="pub-list">
+            <li>
+              <div class="pub-title">A Summary of the ALQAC 2023 Competition</div>
+              <div class="pub-authors">C. Nguyen, Son T. Luu, T. Tran, A. Trieu, A. Dang, &hellip; <b>Nguyen-Khang Le</b>, et al.</div>
+              <div class="pub-venue">International Conference on Knowledge and Systems Engineering (KSE), 2023</div>
+            </li>
+            <li>
+              <div class="pub-title">JNLP COLIEE-2023: Data Augmentation and Large Language Model for Legal Case Retrieval and Entailment</div>
+              <div class="pub-authors">Quang-Minh Bui, Dinh-Truong Do, <b>Nguyen-Khang Le</b>, Dieu-Hien Nguyen, K. V. H. Nguyen, Le-Minh Nguyen</div>
+              <div class="pub-venue">COLIEE Workshop, 2023</div>
+            </li>
+            <li>
+              <div class="pub-title"><a href="https://www.sciencedirect.com/science/article/abs/pii/S0306457323002510" target="_blank" rel="noopener">ViWiQA: Efficient End-to-End Vietnamese Wikipedia-based Open-domain Question-Answering Systems for Single-hop and Multi-hop Questions</a></div>
+              <div class="pub-authors">Dieu-Hien Nguyen, <b>Nguyen-Khang Le</b>, Le-Minh Nguyen</div>
+              <div class="pub-venue">Information Processing &amp; Management, 60(6), 2023</div>
+              <div class="pub-tags"><span class="badge badge--tier">Q1</span></div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 2022 -->
+        <div class="year-group">
+          <div class="year-group__label">2022</div>
+          <ul class="pub-list">
+            <li data-first>
+              <div class="pub-title"><a href="https://aclanthology.org/2022.lrec-1.700/" target="_blank" rel="noopener">VIMQA: A Vietnamese Dataset for Advanced Reasoning and Explainable Multi-hop Question Answering</a></div>
+              <div class="pub-authors"><b>Nguyen-Khang Le</b>, Hien Nguyen, Tung Le Thanh, Le-Minh Nguyen</div>
+              <div class="pub-venue">Language Resources and Evaluation Conference (LREC), 2022</div>
+              <div class="pub-tags"><span class="badge badge--first">First author</span></div>
+            </li>
+            <li>
+              <div class="pub-title">ALQAC 2022: A Summary of the Competition</div>
+              <div class="pub-authors">C. Nguyen, Quang-Minh Bui, Dinh-Truong Do, <b>Nguyen-Khang Le</b>, Dieu-Hien Nguyen, et al.</div>
+              <div class="pub-venue">International Conference on Knowledge and Systems Engineering (KSE), 2022</div>
+            </li>
+            <li>
+              <div class="pub-title">JNLP Team: Deep Learning Approaches for Tackling Long and Ambiguous Legal Documents in COLIEE 2022</div>
+              <div class="pub-authors">Quang-Minh Bui, C. Nguyen, Dinh-Truong Do, <b>Nguyen-Khang Le</b>, Dieu-Hien Nguyen, et al.</div>
+              <div class="pub-venue">JSAI-isAI International Symposium (JURISIN), 2022</div>
+            </li>
+            <li>
+              <div class="pub-title">Using Deep Learning Approaches for Tackling Legal's Challenges (COLIEE 2022)</div>
+              <div class="pub-authors">Quang-Minh Bui, C. Nguyen, Dinh-Truong Do, <b>Nguyen-Khang Le</b>, Dieu-Hien Nguyen, T. T. T. Nguyen</div>
+              <div class="pub-venue">International Workshop on Juris-informatics (JURISIN), 2022</div>
+            </li>
+            <li>
+              <div class="pub-title">A Legal Information Retrieval System for Statute Law</div>
+              <div class="pub-authors">C. Nguyen, <b>Nguyen-Khang Le</b>, Dieu-Hien Nguyen, P. Nguyen, Le-Minh Nguyen</div>
+              <div class="pub-venue">Asian Conference on Intelligent Information and Database Systems (ACIIDS), 2022</div>
+            </li>
+            <li>
+              <div class="pub-title">Exploring Retriever-Reader Approaches in Question-Answering on Scientific Documents</div>
+              <div class="pub-authors">Dieu-Hien Nguyen, <b>Nguyen-Khang Le</b>, Le-Minh Nguyen</div>
+              <div class="pub-venue">Asian Conference on Intelligent Information and Database Systems (ACIIDS), 2022</div>
+            </li>
+            <li>
+              <div class="pub-title">The Engaged Living of Vietnamese High School Students: Accessed from the Social and Emotional Health Perspective</div>
+              <div class="pub-authors">T. V. Giang, V. S. Huynh, <b>Nguyen-Khang Le</b></div>
+              <div class="pub-venue">European Journal of Contemporary Education, 11(1), 2022</div>
+            </li>
+            <li>
+              <div class="pub-title">A Study on Effectiveness of BERT Models and Task-Conditioned Reasoning Strategy for Medical Visual Question Answering</div>
+              <div class="pub-authors">C. Nguyen, T. Le, <b>Nguyen-Khang Le</b>, T. T. Pham, Le-Minh Nguyen</div>
+              <div class="pub-venue">International Conference on Artificial Intelligence for Communications and Systems, 2022</div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 2021 -->
+        <div class="year-group">
+          <div class="year-group__label">2021</div>
+          <ul class="pub-list">
+            <li data-first>
+              <div class="pub-title">A Novel Pipeline to Enhance Question-Answering Model by Identifying Relevant Information</div>
+              <div class="pub-authors"><b>Nguyen-Khang Le</b>, Dieu-Hien Nguyen, T. T. T. Nguyen, M. P. Nguyen, T. Le, Le-Minh Nguyen</div>
+              <div class="pub-venue">JSAI International Symposium on Artificial Intelligence, 2021</div>
+              <div class="pub-tags"><span class="badge badge--first">First author</span></div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 2019 -->
+        <div class="year-group">
+          <div class="year-group__label">2019</div>
+          <ul class="pub-list">
+            <li data-first>
+              <div class="pub-title">Smart Lifelog Retrieval System with Habit-based Concepts and Moment Visualization</div>
+              <div class="pub-authors"><b>Nguyen-Khang Le</b>, Dieu-Hien Nguyen, T.-H. Hoang, T.-A. Nguyen, T.-D. Truong, et al.</div>
+              <div class="pub-venue">ACM Workshop on Lifelog Search Challenge (LSC), 2019</div>
+              <div class="pub-tags"><span class="badge badge--first">First author</span></div>
+            </li>
+            <li data-first>
+              <div class="pub-title">Lifelog Moment Retrieval with Advanced Semantic Extraction and Flexible Moment Visualization for Exploration</div>
+              <div class="pub-authors"><b>Nguyen-Khang Le</b>, Dieu-Hien Nguyen, V.-T. Nguyen, Minh-Triet Tran</div>
+              <div class="pub-venue">CLEF Working Notes, 2019</div>
+              <div class="pub-tags"><span class="badge badge--first">First author</span></div>
+            </li>
+            <li data-first>
+              <div class="pub-title">HCMUS at the NTCIR-14 Lifelog-3 Task</div>
+              <div class="pub-authors"><b>Nguyen-Khang Le</b>, Dieu-Hien Nguyen, T.-H. Hoang, T.-A. Nguyen, T.-D. Truong, et al.</div>
+              <div class="pub-venue">NTCIR-14 Conference, 2019</div>
+              <div class="pub-tags"><span class="badge badge--first">First author</span></div>
+            </li>
+            <li data-first>
+              <div class="pub-title">An Interactive Video Search Platform for Multi-modal Retrieval with Advanced Concepts</div>
+              <div class="pub-authors"><b>Nguyen-Khang Le</b>, Dieu-Hien Nguyen, Minh-Triet Tran</div>
+              <div class="pub-venue">International Conference on Multimedia Modeling (MMM), 2019</div>
+              <div class="pub-tags"><span class="badge badge--first">First author</span></div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== AWARDS & EDUCATION ===================== -->
+    <section class="section" id="awards">
+      <div class="wrap reveal">
+        <div class="cols">
+          <div class="col">
+            <p class="eyebrow">Recognition</p>
+            <h2 class="section-title">Awards &amp; Honors</h2>
+            <ul class="timeline">
+              <li>
+                <div class="t-title">JSPS Research Fellowship</div>
+                <div class="t-sub">Japan Society for the Promotion of Science &middot; acceptance rate &asymp; 7%</div>
+                <div class="t-date">2026</div>
+              </li>
+              <li>
+                <div class="t-title">NEC C&amp;C Foundation Grant</div>
+                <div class="t-sub">NEC C&amp;C Foundation &middot; for research potential in computing &amp; communications</div>
+                <div class="t-date">2024</div>
+              </li>
+              <li>
+                <div class="t-title">Champion — Zalo AI Challenge 2023</div>
+                <div class="t-sub">One of Vietnam's most competitive applied-ML competitions (Runner-up, 2022)</div>
+                <div class="t-date">2023 / 2022</div>
+              </li>
+              <li>
+                <div class="t-title">JAIST Outstanding Student Award</div>
+                <div class="t-sub">Japan Advanced Institute of Science and Technology</div>
+                <div class="t-date">2023</div>
+              </li>
+              <li>
+                <div class="t-title">MEXT Scholarship — Ph.D. Program</div>
+                <div class="t-sub">Government of Japan</div>
+                <div class="t-date">2023 – present</div>
+              </li>
+              <li>
+                <div class="t-title">MEXT Scholarship — Master's Program</div>
+                <div class="t-sub">Government of Japan</div>
+                <div class="t-date">2021 – 2023</div>
+              </li>
             </ul>
+          </div>
+
+          <div class="col">
+            <p class="eyebrow">Background</p>
+            <h2 class="section-title">Education</h2>
+            <ul class="timeline">
+              <li>
+                <div class="t-title">Ph.D. in Information Science</div>
+                <div class="t-sub">Japan Advanced Institute of Science and Technology (JAIST)</div>
+                <div class="t-date">2023 – 2026</div>
+              </li>
+              <li>
+                <div class="t-title">M.Sc. in Information Science</div>
+                <div class="t-sub">Japan Advanced Institute of Science and Technology (JAIST)</div>
+                <div class="t-date">2021 – 2023</div>
+              </li>
+              <li>
+                <div class="t-title">B.Sc.</div>
+                <div class="t-sub">University of Science, VNU-HCM, Vietnam</div>
+                <div class="t-date">2015 – 2019</div>
+              </li>
+            </ul>
+          </div>
         </div>
-    </nav>
-    <section class="about my-section bg-light" id="about">
-        <div class="container-fluid">
-            <h2 class="title s-font mb-5">MY STORY</h2>
-            <div id="handlebars-story">
-            </div>
-        </div>
+      </div>
     </section>
-    <section class="my-section primary-bg" id="skills">
-        <div class="container">
-            <h2 class="title s-font text-light" style="margin-bottom: 4rem">MY SKILLS</h2>
-            <div id="handlebars-skill">
-            </div>
-        </div>
-    </section>
-    <section class="my-section bg-light">
-        <h2 class="title s-font">PROJECTS</h2>
-        <div class="container">
 
-            <div class="card-deck mt-5">
-                <a class="card shadow-box-1 border-0 normal-anchor" data-toggle="tooltip" data-placement="top" title="View on github" href="https://github.com/lekhang4497/HKShopWebsite"
-                    target="_blank">
-                    <img class="card-img-top" src="images/project/hkshop.png" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">HKShop Website</h5>
-                        <p class="card-text">Full-stack responsive shopping website project written in NodeJS and Handlebars view engine. Using
-                            MongooseJS, PassportJS, check out in Paypal sandbox, and many other features.</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">github.com/lekhang4497/HKShopWebsite</small>
-                    </div>
-                </a>
-                <a class="card shadow-box-1 border-0 normal-anchor" data-toggle="tooltip" data-placement="top" title="View on github" href="https://github.com/lekhang4497/HKBookApp"
-                    target="_blank">
-                    <img class="card-img-top" src="images/project/hkbook.png" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">HKBook App</h5>
-                        <p class="card-text">An application that helps users to recognize books from their covers or ISBN code. Using Microsoft
-                            Azure Vision API, Goodreads API, Google Firebase.</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">github.com/lekhang4497/HKBookApp</small>
-                    </div>
-                </a>
-                <a class="card shadow-box-1 border-0 normal-anchor" data-toggle="tooltip" data-placement="top" title="View on github" href="https://github.com/lekhang4497/lekhang4497.github.io"
-                    target="_blank">
-                    <img class="card-img-top" src="images/project/personal.png" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Personal website</h5>
-                        <p class="card-text">Fully responsive personal website</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">github.com/lekhang4497/lekhang4497.github.io</small>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-    <section class="my-section" id="contact">
-        <h2 class="title s-font">CONTACT ME</h2>
-        <div class="d-flex flex-wrap align-items-center mt-5 flex-column">
-            <p class="social-icon d-flex align-items-center">
-                <i class="fas fa-envelope"></i> lekhang4497@gmail.com
-            </p>
-            <p class="social-icon d-flex align-items-center">
-                <i class="fab fa-facebook"></i>facebook.com/lekhang4497
-            </p>
-            <p class="social-icon d-flex align-items-center">
-                <i class="fab fa-skype"></i>lekhang4497@gmail.com
-            </p>
-            <p class="social-icon d-flex align-items-center">
-                <i class="fab fa-linkedin"></i>linkedin.com/in/le-nguyen-khang
-            </p>
-            <a class="social-icon d-flex align-items-center" href="https://github.com/lekhang4497">
-                <i class="fab fa-github"></i>github.com/lekhang4497
-            </a>
-        </div>
-    </section>
-    <footer>
-        <div class="text-center bg-dark p-3 text-light">
-            © 2018 Khang-Nguyen Le
-        </div>
-    </footer>
-    <!-- Education modal -->
-    <div id="educationModal" class="bg-success">
-        <div class="py-5">
-            <div class="container">
-                <div class="org mb-5 rounded shadow-box-1 p-5 bg-white">
-                    <div class="org-header">
-                        <div class="row">
-                            <div class="col-md-2">
-                                <div class="org-icon rounded m-md-0 m-auto shadow-box-1">
-                                    <i class="fas fa-graduation-cap"></i>
-                                </div>
+  </main>
 
-                            </div>
-                            <div class="col-md-8">
-                                <div class="org-name text-md-left text-center">
-                                    Ho Chi Minh University of Science
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="text-md-right text-center">
-                                    2015 - 2019
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="org-content">
-                        <h6 class="content-header">Computer Science</h6>
-                        <ul class="pl-4">
-                            <li>GPA: 8.51/10</li>
-                            <li>Honors Program</li>
-                            <li>“Student of 5 merits” title</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="org rounded shadow-box-1 p-5 bg-white">
-                    <div class="org-header">
-                        <div class="row">
-                            <div class="col-md-2">
-                                <div class="org-icon rounded m-md-0 m-auto shadow-box-1">
-                                    <i class="fas fa-school"></i>
-                                </div>
-
-                            </div>
-                            <div class="col-md-8">
-                                <div class="org-name text-md-left text-center">
-                                    Lê Hồng Phong High School for the Gifted
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="text-md-right text-center">
-                                    2012 - 2015
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="org-content">
-                        <h6 class="content-header">Graduated from Le Hong Phong High School</h6>
-                        <ul class="pl-4">
-                            <li>Special class of Informatics</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="footer" id="contact">
+    <div class="wrap footer__inner reveal">
+      <p class="eyebrow">Get in touch</p>
+      <h2 class="section-title">Contact</h2>
+      <p class="footer__lead">
+        I'm always glad to discuss research on efficient and multilingual LLMs, potential
+        collaborations, or talks. The fastest way to reach me is by
+        <a href="mailto:lnkhang@jaist.ac.jp">email</a>.
+      </p>
+      <div class="footer__grid">
+        <div class="footer__block">
+          <div class="k">Email</div>
+          <div class="v"><a href="mailto:lnkhang@jaist.ac.jp">lnkhang@jaist.ac.jp</a></div>
         </div>
+        <div class="footer__block">
+          <div class="k">Affiliation</div>
+          <div class="v">Nguyen Laboratory, JAIST</div>
+        </div>
+        <div class="footer__block">
+          <div class="k">Location</div>
+          <div class="v">Nomi, Ishikawa, Japan</div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span>&copy; <span data-year>2026</span> Nguyen-Khang Le</span>
+        <div class="links">
+          <a href="https://scholar.google.com/citations?user=hQwyv4YAAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 1 8l11 6 9-4.91V17h2V8L12 2zM5 13.18v3.82L12 21l7-4v-3.82l-7 3.82-7-3.82z"/></svg> Scholar
+          </a>
+          <a href="https://github.com/lekhang4497" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.06.78 2.14 0 1.55-.01 2.8-.01 3.18 0 .31.21.69.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg> GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/le-nguyen-khang/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg> LinkedIn
+          </a>
+          <a href="https://orcid.org/0000-0001-6585-5470" target="_blank" rel="noopener" aria-label="ORCID">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zM8.06 17.5H6.6V8.9h1.46v8.6zM7.33 7.8a.96.96 0 1 1 0-1.92.96.96 0 0 1 0 1.92zm9.92 6.04c0 2.6-1.66 3.66-3.9 3.66H9.9V8.9h3.45c2.16 0 3.9 1.4 3.9 3.94zm-1.5.03c0-1.88-1.16-2.65-2.5-2.65h-1.9v5.32h1.6c1.52 0 2.8-.67 2.8-2.67z"/></svg> ORCID
+          </a>
+        </div>
+      </div>
     </div>
-    <!-- Work experience modal -->
-    <div id="workModal" class="bg-primary">
-        <div class="p-5">
-            <div class="container">
-                <div class="org rounded p-5 shadow-box-1 bg-white mb-5">
-                    <div class="org-header">
-                        <div class="row">
-                            <div class="col-md-2">
-                                <div class="org-image m-md-0 m-auto">
-                                    <img class="img-fluid" src="images/company/vng.jpg" alt="VNG">
-                                </div>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="org-name text-md-left text-center">
-                                    VNG Corporation
-                                </div>
-                                <div>Back-end developer</div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="text-md-right text-center">
-                                    2018 - Present
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="org-content">
-                        <h6 class="content-header">Detail</h6>
-                        <ul class="pl-4">
-                            <li>Develop back-end API for ZaloPay app</li>
-                        </ul>
-                    </div>
-                </div>
+  </footer>
 
-                <div class="org rounded p-5 shadow-box-1 bg-white">
-                    <div class="org-header">
-                        <div class="row">
-                            <div class="col-md-2">
-                                <div class="org-image m-md-0 m-auto">
-                                    <img class="img-fluid" src="images/company/tma.png" alt="VNG">
-                                </div>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="org-name text-md-left text-center">
-                                    TMA Solutions
-                                </div>
-                                <div>Front-end developer</div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="text-md-right text-center">
-                                    2017 - 2018
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="org-content">
-                        <h6 class="content-header">Detail</h6>
-                        <ul class="pl-4">
-                            <li>Developed front-end web applications for IoT Solutions</li>
-                            <li>Using Angular, AWS IoT, DynamoDB, MQTT Protocol</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Award modal -->
-    <div id="awardModal" class="bg-danger">
-        <div class="py-5">
-            <div class="container">
-                <div class="org mb-5 rounded shadow-box-1 p-5 bg-white">
-                    <div class="org-header">
-                        <div class="row">
-                            <div class="col-md-2">
-                                <div class="org-icon rounded m-md-0 m-auto shadow-box-1">
-                                    <i class="fas fa-award"></i>
-                                </div>
-
-                            </div>
-                            <div class="col-md-10">
-                                <div class="org-name text-md-left text-center">
-                                    Certificates and Awards
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="org-content">
-                        <h6 class="content-header">AWARDS</h6>
-                        <ul class="pl-4">
-                            <li>
-                                <b>2018</b> - Anduin STEM Scholarship 2018 Award</li>
-                            <li>
-                                <b>2018</b> - EVOLABLE ASIA Scholarship</li>
-                            <li>
-                                <b>2017</b> - Student of 5 merits</li>
-                            <li>
-                                <b>2017</b> - OLP 2017 – Third prize</li>
-                            <li>
-                                <b>2017</b> - Excellent volunteer award (Green Summer Volunteer Campaign)</li>
-                            <li>
-                                <b>2017</b> - Delegate of International Students Science Forum 2017</li>
-                            <li>
-                                <b>2015</b> - City excellent student in Informatics (High school) – Second prize</li>
-                            <li>
-                                <b>2012</b> - City excellent student in Informatics (Secondary school) – First prize</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+  <script src="assets/js/main.js" defer></script>
 </body>
-<script id="story-template" type="text/x-handlebars-template">
-    <div class="row">
-        {{#each story}}
-        <div class="col-md-4">
-            <div class="card-box hvr-ripple-out primary-hvr w-100 mb-4 shadow-box-1 {{this.triggerClass}}">
-                <div class="d-flex justify-content-center align-items-center info-card primary-border flex-column info-name">
-                    <img class="bg-img" src="{{this.background}}">
-                    <i class="{{this.iconClass}} mb-2"></i>
-                    <h3 class="text-center s-font">
-                        {{this.name}}</h3>
-                </div>
-            </div>
-        </div>
-        {{/each}}
-    </div>
-</script>
-<script id="skill-template" type="text/x-handlebars-template">
-    {{#each skillSections}}
-    <div class="card shadow-box-1 mb-5">
-        <div class="skill-ribbon d-md-block d-none"></div>
-        <div class="card-body">
-            {{#each this}}
-            <h3 class="my-card-title">{{this.name}}</h3>
-            <div class="mb-4">
-                <div class="row">
-                    {{#each this.skills}}
-                    <div class="col-md-2 col-4">
-                        <div class="skill-box mb-4 mx-auto">
-                            <div class="img-wrapper">
-                                <img class="img-fluid" src="{{this.image}}" alt="{{this.name}}">
-                            </div>
-                            <div class="text-center mt-3">{{this.name}}</div>
-                        </div>
-                    </div>
-                    {{/each}}
-                </div>
-            </div>
-            {{/each}}
-        </div>
-    </div>
-    {{/each}}
-</script>
-
-<script src="node_modules/jquery/dist/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="node_modules/izimodal/js/iziModal.min.js"></script>
-<script src="node_modules/handlebars/dist/handlebars.min.js"></script>
-<script src="js/bindingSkill.js"></script>
-<script src="js/bindingStory.js"></script>
-<script>
-    $(function () {
-        bindingStory();
-        bindingSkills();
-        $('[data-toggle="tooltip"]').tooltip();
-    })
-</script>
-<script src="js/smoothScroll.js"></script>
-<script src="js/modal.js"></script>
-
 </html>
