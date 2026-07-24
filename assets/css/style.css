@@ -17,6 +17,7 @@
   --accent: #0285ff;
   --accent-strong: #0268c9;
   --green: #008635;
+  --highlight: #b45309;
   --shadow: 0 1px 2px rgba(13, 13, 13, .04), 0 8px 24px -12px rgba(13, 13, 13, .12);
   --shadow-lift: 0 2px 4px rgba(13, 13, 13, .05), 0 18px 40px -16px rgba(13, 13, 13, .22);
 
@@ -45,6 +46,7 @@ html[data-theme="dark"] {
   --green: #40c977;
   --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 10px 30px -14px rgba(0, 0, 0, .6);
   --shadow-lift: 0 2px 6px rgba(0, 0, 0, .35), 0 22px 48px -18px rgba(0, 0, 0, .7);
+  --highlight: #f59e0b;
 }
 
 /* ---- Reset ----------------------------------------------------- */
@@ -295,6 +297,8 @@ html[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
 .badge--first { color: var(--green); border-color: color-mix(in srgb, var(--green) 40%, var(--border-2)); }
 .badge--first::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
 .badge--tier { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 40%, var(--border-2)); }
+.badge--highlight { color: var(--highlight); border-color: color-mix(in srgb, var(--highlight) 40%, var(--border-2)); }
+.badge--highlight::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--highlight); }
 
 /* =================================================================
    Selected publications (cards)
